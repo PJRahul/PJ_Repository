@@ -6,7 +6,13 @@
         <title>Pizza Order</title>
     </head>
     <body>
+        <p>{{ notes }}</p>
         <h1>Place Your Pizza Order</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Place Order</button>
+        </form>
         <p>Thank you for choosing our pizza!</p>
     </body> 
 </html>
